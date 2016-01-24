@@ -31,7 +31,7 @@ func (rc *RoomChannel) Received(event thunderbird.Event) {
 func main() {
 	tb := thunderbird.New()
 	ch := &RoomChannel{tb}
-	tb.HandleChannel("room1", ch)
+	tb.HandleChannel("room", ch)
 
 	router := mux.NewRouter()
 	router.HandleFunc("/", serveHome).Methods("GET")
@@ -40,8 +40,7 @@ func main() {
 	n := negroni.New(
 		negroni.NewRecovery(),
 		negroni.NewLogger(),
-		negroni.NewStatic(http.Dir("../client/lib")), // serve thunderbird.js
-		negroni.NewStatic(http.Dir("public")),        // serve other assets
+		negroni.NewStatic(http.Dir("public")), // serve other assets
 	)
 	n.UseHandler(router)
 
