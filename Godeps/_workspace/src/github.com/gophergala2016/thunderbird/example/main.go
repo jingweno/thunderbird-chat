@@ -5,9 +5,9 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/gophergala2016/thunderbird-chat/Godeps/_workspace/src/github.com/codegangsta/negroni"
-	"github.com/gophergala2016/thunderbird-chat/Godeps/_workspace/src/github.com/gophergala2016/thunderbird"
-	"github.com/gophergala2016/thunderbird-chat/Godeps/_workspace/src/github.com/gorilla/mux"
+	"github.com/codegangsta/negroni"
+	"github.com/gophergala2016/thunderbird"
+	"github.com/gorilla/mux"
 )
 
 var homeTempl = template.Must(template.ParseFiles("home.html"))
@@ -31,7 +31,7 @@ func (rc *RoomChannel) Received(event thunderbird.Event) {
 func main() {
 	tb := thunderbird.New()
 	ch := &RoomChannel{tb}
-	tb.HandleChannel("room1", ch)
+	tb.HandleChannel("room", ch)
 
 	router := mux.NewRouter()
 	router.HandleFunc("/", serveHome).Methods("GET")

@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/gophergala2016/thunderbird-chat/Godeps/_workspace/src/github.com/gorilla/websocket"
+	"github.com/gorilla/websocket"
 )
 
 type httpHandler struct {
