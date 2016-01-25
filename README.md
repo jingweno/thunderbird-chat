@@ -1,6 +1,6 @@
 # Thunderbird Chat
 
-This is an example to demo Thunderbird. It's running at https://thunderbird-chat.herokuapp.com. Enjoy your Gopher Gala 2016 chat :-)!
+This is an example to demo [Thunderbird](https://github.com/gophergala2016/thunderbird). It's running at https://thunderbird-chat.herokuapp.com. Enjoy your Gopher Gala 2016 chat :-)!
 
 ## Compile
 
